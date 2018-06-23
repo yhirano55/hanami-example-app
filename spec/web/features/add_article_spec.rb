@@ -18,4 +18,18 @@ describe 'Add a article' do
     expect(current_path).to eq '/articles'
     expect(page).to have_content 'New article'
   end
+
+  it 'displays list of errors when params contains errors' do
+    visit '/articles/new'
+
+    within 'form#article-form' do
+      click_button 'Create'
+    end
+
+    expect(current_path).to eq '/articles'
+
+    expect(page).to have_content 'There was a problem with your submission'
+    expect(page).to have_content 'Subject must be filled'
+    expect(page).to have_content 'Content must be filled'
+  end
 end

@@ -1,5 +1,12 @@
 h2 Add article
 
+- unless params.valid?
+  .errors
+    h3 There was a problem with your submission
+    ul
+      - params.error_messages.each do |message|
+        li= message
+
 = form_for :article, '/articles' do
   - div class: 'input' do
     - label      :subject
