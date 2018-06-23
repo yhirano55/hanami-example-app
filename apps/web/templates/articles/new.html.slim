@@ -7,7 +7,7 @@ h2 Add article
       - params.error_messages.each do |message|
         li= message
 
-= form_for :article, '/articles' do
+= form_for :article, routes.articles_path do
   - div class: 'input' do
     - label      :subject
     - text_field :subject
