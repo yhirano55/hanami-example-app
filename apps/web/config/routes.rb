@@ -3,6 +3,5 @@
 #
 # Example:
 # get '/hello', to: ->(env) { [200, {}, ['Hello from Hanami!']] }
-resources :articles, only: [:index, :new, :create, :destroy]
+resources :articles, only: [:index, :new, :create, :show, :destroy]
 root to: 'articles#index'
-delete '/articles/:id', to: 'articles#destroy'

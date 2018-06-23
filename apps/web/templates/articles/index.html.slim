@@ -5,7 +5,7 @@ h2 All articles
   - if articles.any?
     - articles.each do |article|
       .article
-        h3= article.subject
+        h3= link_to article.subject, routes.article_path(article.id)
         p= article.content
         p
           = form_for article, routes.article_path(article.id), method: :delete do
