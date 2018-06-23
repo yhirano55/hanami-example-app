@@ -1,0 +1,11 @@
+h1 Articles
+h2 All articles
+
+#articles
+  - if articles.any?
+    - articles.each do |article|
+      .article
+        h3= article.subject
+        p= article.content
+  - else
+    p.placeholder There are no articles yet.
