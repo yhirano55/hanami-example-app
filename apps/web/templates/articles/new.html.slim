@@ -1,0 +1,13 @@
+h2 Add article
+
+= form_for :article, '/articles' do
+  - div class: 'input' do
+    - label      :subject
+    - text_field :subject
+
+  - div class: 'input' do
+    - label      :content
+    - text_field :content
+
+  - div class: 'controls' do
+    - submit 'Create Article'

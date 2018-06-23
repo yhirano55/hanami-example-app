@@ -14,7 +14,7 @@ RSpec.describe Web::Controllers::Articles::Index, type: :action do
     expect(response[0]).to eq 200
   end
 
-  it 'exposes all books' do
+  it 'exposes all articles' do
     action.call(params)
     expect(action.exposures[:articles]).to match_array [@article]
   end
