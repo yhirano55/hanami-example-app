@@ -7,6 +7,10 @@ h2 All articles
       .article
         h3= article.subject
         p= article.content
+        p
+          = form_for article, routes.article_path(article.id), method: :delete do
+            - div class: 'controls' do
+              - submit 'Delete'
   - else
     p.placeholder There are no articles yet.
 

@@ -14,7 +14,7 @@ module Web::Controllers::Articles
     def call(params)
       if params.valid?
         ArticleRepository.new.create(params[:article])
-        redirect_to '/articles'
+        redirect_to routes.articles_path
       else
         self.status = 422
       end
